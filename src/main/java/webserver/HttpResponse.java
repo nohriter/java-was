@@ -62,12 +62,8 @@ public class HttpResponse {
         }
     }
 
-    public void writeBody(String path) {
-        try {
-            body = IOUtils.readRequestResource(path);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
+    public void writeBody(byte[] body) {
+        this.body = body;
     }
 
     public void responseBody() {
